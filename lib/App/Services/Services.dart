@@ -1,10 +1,10 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'Model/customer.dart';
+import '../Model/customer.dart';
 
 class Services {
-  static const ROOT = 'http://192.168.0.105/CustomersDB/customer_actions.php';
+  // The path must contain the IP address of the device hosting the server
+  static const ROOT = 'http://---/CustomersDB/customer_actions.php';
   static const _CREATE_TABLE_ACTION = 'CREATE_TABLE';
   static const _GET_ALL_ACTION = 'GET_ALL';
   static const _ADD_EMP_ACTION = 'ADD_REC';

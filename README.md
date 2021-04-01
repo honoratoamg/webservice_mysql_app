@@ -1,16 +1,14 @@
 # webservice_mysql_app
 
-A flutter app that connect to a mysql database
+This is a learning application. This app (Flutter Application) access a MYSQL Web Service  and do CRUD operations on the online database with the help of a php script. This app also implements a Debouncing technique.
 
-## Getting Started
+This app can:
+- Create a table
+- Filter Records with a search bar
+- Insert, Delete and Update records
+- Fetch all records
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+Home Page                  |  Updating a record
+:-------------------------:|:-------------------------:
+<img src="screenshots_readme/webservice_mysql_1.png" width="300">|<img src="screenshots_readme/webservice_mysql_2.png" width="300">|

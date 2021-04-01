@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:webservice_mysql_app/Model/customer.dart';
-import 'package:webservice_mysql_app/Utils/debouncer.dart';
+import 'package:webservice_mysql_app/App/Model/customer.dart';
+import 'package:webservice_mysql_app/App/Utils/debouncer.dart';
 
-import '../Services.dart';
+import '../Services/Services.dart';
 
 class Homepage extends StatefulWidget {
   final String title = 'MySQL Webservice app';
@@ -225,12 +225,6 @@ class _HomepageState extends State<Homepage> {
         title: Text(widget.title), 
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              _createTable();
-            },
-          ),
-          IconButton(
             icon: Icon(Icons.refresh),
             onPressed: () {
               _getCustomers();
@@ -243,7 +237,11 @@ class _HomepageState extends State<Homepage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(8.0),
+              child: RaisedButton(onPressed: () => _createTable(),child: Text('Create Table')),
+            ),
+            Padding(
+              padding: EdgeInsets.all(18.0),
               child: TextField(
                 controller: _firstNameController,
                 decoration: InputDecoration.collapsed(
@@ -252,7 +250,7 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(18.0),
               child: TextField(
                 controller: _lastNameController,
                 decoration: InputDecoration.collapsed(
@@ -264,6 +262,7 @@ class _HomepageState extends State<Homepage> {
             /// Show Add and Update buttons only when updating an customer
             _isUpdating
                 ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlineButton(
                   child: Text('UPDATE'),
